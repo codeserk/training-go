@@ -17,6 +17,10 @@ func NewLocalRepository() Repository {
 }
 
 func (r *LocalRepository) Find(id string) (*entity.Cat, error) {
+	if cat, ok := r.cats[id]; ok {
+		return &cat, nil
+	}
+
 	return nil, nil
 }
 
