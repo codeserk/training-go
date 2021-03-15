@@ -5,11 +5,11 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Start Lesson 0",
+      "name": "Start API",
       "type": "go",
       "request": "launch",
       "mode": "debug",
-      "program": "${cwd}/lesson-0/main.go"
+      "program": "${cwd}/main.go"
     }
 
   ]
