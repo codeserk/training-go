@@ -25,11 +25,9 @@ func homePage(w http.ResponseWriter, r *http.Request) {
 // @description This is a sample server Petstore server.
 
 // @contact.name API Support
-
 // @license.name Apache 2.0
 
 // @host localhost:8050
-// @port 8050
 // @BasePath /
 func main() {
 	log.SetPrefix("training> ")
@@ -37,7 +35,6 @@ func main() {
 	router := mux.NewRouter()
 
 	cats := cat.NewLocalService()
-
 	catHttp.MakeCatHandlers(router, cats)
 
 	router.PathPrefix("/swagger/").Handler(httpSwagger.Handler(
@@ -50,5 +47,5 @@ func main() {
 
 	port := "8050"
 	log.Printf("Server started at http://localhost:%v", port)
-	log.Fatal(http.ListenAndServe("localhost:" + port, nil))
+	log.Fatal(http.ListenAndServe("localhost:"+port, nil))
 }
