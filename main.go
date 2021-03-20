@@ -4,11 +4,13 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
+	"strconv"
 
 	httpSwagger "github.com/swaggo/http-swagger"
 
 	cat "api/cat"
 	catHttp "api/cat/http"
+	"api/config"
 
 	"github.com/gorilla/mux"
 
@@ -34,6 +36,11 @@ func main() {
 
 	router := mux.NewRouter()
 
+	conf, err := config.Parse()
+	if err != nil {
+		log.Fatalf("There was an error found while trying to load the configuration: \n%s \n", err.Error())
+	}
+
 	cats := cat.NewLocalService()
 	catHttp.MakeCatHandlers(router, cats)
 
@@ -45,7 +52,6 @@ func main() {
 
 	http.Handle("/", router)
 
-	port := "8050"
-	log.Printf("Server started at http://localhost:%v", port)
-	log.Fatal(http.ListenAndServe("localhost:"+port, nil))
+	log.Printf("Server started at http://localhost:%v/swagger/", conf.Api.Port)
+	log.Fatal(http.ListenAndServe("localhost:"+strconv.Itoa(conf.Api.Port), nil))
 }

@@ -8,10 +8,12 @@ require (
 	github.com/google/uuid v1.2.0
 	github.com/gorilla/mux v1.8.0
 	github.com/howeyc/fsnotify v0.9.0 // indirect
+	github.com/joho/godotenv v1.3.0 // indirect
 	github.com/mailru/easyjson v0.7.7 // indirect
-	github.com/mattn/go-colorable v0.1.8 // indirect
 	github.com/pilu/config v0.0.0-20131214182432-3eb99e6c0b9a // indirect
 	github.com/pilu/fresh v0.0.0-20190826141211-0fa698148017 // indirect
+	github.com/spf13/pflag v1.0.5
+	github.com/spf13/viper v1.7.1
 	github.com/swaggo/http-swagger v1.0.0
 	github.com/swaggo/swag v1.7.0
 	golang.org/x/net v0.0.0-20210315170653-34ac3e1c2000 // indirect

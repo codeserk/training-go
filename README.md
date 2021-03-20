@@ -6,6 +6,7 @@ This repository contains a simple GO project that is created while I have been l
 
 - [X] Clean architecture demonstration (http, use cases, repository)
 - [X] API using Swagger
+- [X] Read configuration from local files and environment
 - [ ] API presenters (DTO)
 - [ ] MongoDB repository
 
